@@ -4,5 +4,6 @@ RUN npm install
 RUN mkdir public
 COPY public/ public/
 COPY server.js .
+COPY tracer.js .
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "node", "--require", "./tracer.js", "server.js" ]
