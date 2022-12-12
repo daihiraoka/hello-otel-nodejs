@@ -1,10 +1,13 @@
-const http = require('http');
-
-http.createServer(function (request, response) {
-   target = process.env.TARGET ? process.env.TARGET : 'World' ;
-   msg = process.env.MSG ? process.env.MSG : 'Hello ' + target + '\n';
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   response.end(msg);
-}).listen(8080);
-
-console.log('Server running at http://0.0.0.0:8080/');
+const express = require('express');
+const app = express();
+ 
+app.use(express.static(__dirname + '/public'));
+ 
+// bodyParser
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+ 
+app.listen(process.env.PORT || 8080, () => {
+  console.log("server start!");
+  console.log(`app listening at http://localhost:${process.env.PORT || 8080}`)
+})
