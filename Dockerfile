@@ -1,4 +1,4 @@
-FROM icr.io/codeengine/node:12-alpine
+FROM 20.9.0-slim
 COPY package.json .
 RUN npm install
 RUN mkdir public
