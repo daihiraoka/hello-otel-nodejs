@@ -1,4 +1,4 @@
-FROM 20.9.0-slim
+FROM node:20.9.0-slim
 COPY package.json .
 RUN npm install
 RUN mkdir public
