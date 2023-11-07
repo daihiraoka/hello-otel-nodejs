@@ -25,7 +25,7 @@ const nodeAutoInstrumentations = getNodeAutoInstrumentations();
 
 const sdk = new opentelemetry.NodeSDK({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'CodeEngineApps'
+    [SemanticResourceAttributes.SERVICE_NAME]: 'CodeEndgineApps'
   }),
   // Configure OpenTelemetry to use the Instana Exporter
   traceExporter: instanaTraceExporter,
